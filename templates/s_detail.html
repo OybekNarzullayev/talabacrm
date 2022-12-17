@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block title%}
+Talaba ma'lumotlarini ko'rish
+{% endblock %}
+
+{% block content %}
+<table class="table table-white">
+    <thead>
+      <tr>
+       
+        <th scope="col">ID</th>
+        <th scope="col">Ismi</th>
+        <th scope="col">Familiyasi</th>
+        <th scope="col">Guruhi</th>
+        </tr>
+      
+    </thead>
+    <tbody>
+         <tr>
+        <th scope="row">{{d_student.id}}</th>
+        <td>{{d_student.name}}</td>
+        <td>{{d_student.l_name}}</td>
+        <td>{{d_student.group}}</td>      
+      </tr>
+      
+     
+    </tbody>
+  </table>
+  {% endblock%}

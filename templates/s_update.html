@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block title%}
+
+Siz {{student.name}} ismli talabani ma'lumotlarini o'zgartirmoqchimisz
+
+{% endblock %}
+
+{% block content %}
+
+        
+</form>  
+<div class="container" style="width: 400px;">
+    <form  method="post">
+    {% csrf_token %}
+    <label for="">Ismi</label>
+    {{form.name |attr:"type:text" |attr:"placeholder:Ism kiritish" |add_class:"form-control"}}
+    <small class="form-text text-muteds">Ismingiz pasport bo'yicha kiritilsin</small>
+    <label for="">Familya</label>
+    <br>
+    {{form.l_name |attr:"type:text" |attr:"placeholder:Familiya kiritish" |add_class:"form-control"}}
+    <small class="form-text text-muteds">Familiyangiz pasport bo'yicha kiritilsin</small><br>
+    <label for="">Yoshi</label>
+    {{form.age |attr:"type:number" |attr:"placeholder:Yosh kiritish" |add_class:"form-control"}}
+    <small class="form-text text-muteds">Yoshingiz pasport bo'yicha kiritilsin</small><br>
+    {{form.group |attr:"type:number" |attr:"placeholder:Guruh kiritish" |add_class:"form-control"}}
+    <small class="form-text text-muteds">Guruhingiz kiritilsin</small><br>
+    {{form.region |attr:"type:text" |attr:"placeholder:Viloyati kiritish" |add_class:"form-control"}}
+    <small class="form-text text-muteds">Viloyatingiz kiritilsin</small>
+        
+    
+        <br><br>
+<button type="submit" class="btn btn-info">
+    Submit
+</button>
+</form>
+
+</div>
+{% endblock %}
